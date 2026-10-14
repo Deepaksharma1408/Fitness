@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+  <title>Apex Fitness: Online Fitness Coaching With Real Coaches</title>
+  <meta name="description" content="Get a certified human fitness coach, a custom workout plan, and precision macro targets in one unified app. Train at home or in the gym, track progress and video-call your coach." />
+  <meta name="keywords" content="online fitness coaching, personal trainer app, custom workout plan, macro tracking, nutrition coaching, weight loss coach, muscle building program, strength training coach" />
+  <meta name="theme-color" content="#FF3B30" />
+  
+  <!-- Modern Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/src/styles/variables.css" />
+  <link rel="stylesheet" href="/src/styles/base.css" />
+  <link rel="stylesheet" href="/src/styles/components.css" />
+  <link rel="stylesheet" href="/src/styles/sections.css" />
+  <link rel="stylesheet" href="/src/styles/animations.css" />
+</head>
+<body>
+
+  <!-- Sticky Header / Navbar -->
+  <header class="site-header" id="main-header">
+    <div class="container header-container">
+      <a href="/" class="brand-logo" aria-label="Homepage">
+        <div class="brand-icon-box">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h12"/><path d="M12 2v20"/><path d="m6 8 6-6 6 6"/></svg>
+        </div>
+        <span><span class="dynamic-brand-name">Apex Fitness</span><span class="brand-dot">.</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#coaches-section" class="nav-link">Coaches</a>
+        <a href="#services-section" class="nav-link">Services & Stores</a>
+        <a href="#how-it-works-section" class="nav-link">How It Works</a>
+        <a href="#comparison-section" class="nav-link">Comparison</a>
+        <a href="#for-coaches-section" class="nav-link">For Coaches</a>
+        <a href="#pricing-section" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle-btn" class="theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Theme Mode">
+          <span id="theme-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          </span>
+        </button>
+        <button class="btn btn-secondary btn-sm btn-open-coach-apply">
+          Coach Portal
+        </button>
+        <button class="btn btn-primary btn-sm btn-open-quiz">
+          <span>Start Free</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+        <button class="btn-icon mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Mobile Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-drawer" class="modal-overlay" style="z-index: 1500;">
+    <div class="modal-dialog" style="max-width: 320px; text-align: center; gap: 1rem; display: flex; flex-direction: column;">
+      <button class="modal-close" aria-label="Close menu">&times;</button>
+      <h3 style="margin-bottom: 1rem;"><span class="dynamic-brand-name">Apex Fitness</span></h3>
+      <a href="#coaches-section" class="nav-link">Coaches Directory</a>
+      <a href="#services-section" class="nav-link">Services & Stores</a>
+      <a href="#how-it-works-section" class="nav-link">How It Works</a>
+      <a href="#comparison-section" class="nav-link">Why Us vs. Generic Apps</a>
+      <a href="#for-coaches-section" class="nav-link">For Fitness Coaches</a>
+      <a href="#pricing-section" class="nav-link">Membership Plans</a>
+      <button class="btn btn-primary btn-full btn-open-quiz" style="margin-top: 1rem;">
+        Take 60s Assessment
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="bg-ambient-glow"></div>
+      <div class="grid-overlay"></div>
+
+      <div class="container hero-grid" style="position: relative; z-index: 2;">
+        <div class="hero-content">
+          <div class="pill-tag">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+            <span>Online fitness coaching with certified coaches</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span id="hero-title-line-1">Real coaches.</span>
+            <span class="text-gradient" id="hero-title-line-2">Clear plans.</span>
+            <span id="hero-title-line-3">Honest progress.</span>
+          </h1>
+
+          <p class="hero-description">
+            <span class="dynamic-brand-name">Apex Fitness</span> connects you with certified human coaches, personalized workout programs, precision nutrition tracking, and native 1-on-1 in-app video sessions — delivering true accountability where generic fitness apps fail.
+          </p>
+
+          <div class="hero-ctas">
+            <button class="btn btn-primary btn-lg btn-open-quiz" id="hero-btn-primary">
+              <span>Start Training Free</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+            <button class="btn btn-secondary btn-lg btn-open-coach-apply" id="hero-btn-secondary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span>I'm a Coach</span>
+            </button>
+          </div>
+
+          <div class="app-store-badges">
+            <div class="badge-store">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.76 1.06-1.81.94-2.87-.91.04-2.02.61-2.67 1.37-.58.67-1.09 1.74-.96 2.78 1.02.08 2.06-.52 2.69-1.28Z"/></svg>
+              <span>App Store</span>
+            </div>
+            <div class="badge-store">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5.39 0 .76.15 1.05.43l13.9 13.9c.7.7.7 1.83 0 2.53l-13.9 13.9c-.29.28-.66.44-1.05.44C3.67 22 3 21.33 3 20.5Z"/></svg>
+              <span>Google Play</span>
+            </div>
+          </div>
+
+          <div class="hero-proof-bar">
+            <div class="proof-item">
+              <span class="proof-icon">✓</span>
+              <span>Coach-reviewed plans</span>
+            </div>
+            <div class="proof-item">
+              <span class="proof-icon">✓</span>
+              <span>Certified human coaches</span>
+            </div>
+            <div class="proof-item">
+              <span class="proof-icon">✓</span>
+              <span>Apple Health & Macro logs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right: Interactive Smartphone Simulator -->
+        <div class="phone-simulator-wrapper">
+          <!-- Floating interactive badge 1 -->
+          <div class="floating-video-badge">
+            <div style="width: 34px; height: 34px; border-radius: 10px; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
+            </div>
+            <div>
+              <div style="font-size: 0.65rem; font-weight: 800; color: var(--primary); text-transform: uppercase;">1-on-1 Coaching</div>
+              <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">HD Video Sessions In-App</div>
+            </div>
+          </div>
+
+          <!-- Phone Mockup Container -->
+          <div class="phone-mockup" id="phone-mockup-widget">
+            <div class="phone-screen">
+              <!-- Status bar -->
+              <div class="phone-header">
+                <span style="font-weight: 700;">9:41</span>
+                <div style="display: flex; gap: 0.35rem; align-items: center;">
+                  <span>5G</span>
+                  <span>100%</span>
+                </div>
+              </div>
+
+              <!-- User Header -->
+              <div class="phone-user-bar">
+                <div>
+                  <div style="font-size: 0.65rem; text-transform: uppercase; color: #9ca3af; font-weight: 600;">Good Morning</div>
+                  <div style="font-size: 0.95rem; font-weight: 900; color: #ffffff;">Alex Johnson 👋</div>
+                </div>
+                <div class="phone-avatar">AJ</div>
+              </div>
+
+              <!-- Interactive Calendar Strip -->
+              <div class="phone-calendar-strip">
+                <div class="cal-day"><span>M</span><strong>14</strong></div>
+                <div class="cal-day"><span>T</span><strong>15</strong></div>
+                <div class="cal-day"><span>W</span><strong>16</strong></div>
+                <div class="cal-day active"><span>T</span><strong>17</strong></div>
+                <div class="cal-day"><span>F</span><strong>18</strong></div>
+                <div class="cal-day"><span>S</span><strong>19</strong></div>
+                <div class="cal-day"><span>S</span><strong>20</strong></div>
+              </div>
+
+              <!-- Simulator Navigation Tabs -->
+              <div class="phone-nav-tabs">
+                <button class="phone-tab-btn active" data-tab="workout">Workout</button>
+                <button class="phone-tab-btn" data-tab="nutrition">Macros</button>
+                <button class="phone-tab-btn" data-tab="video">Video Call</button>
+                <button class="phone-tab-btn" data-tab="telemetry">Telemetry</button>
+              </div>
+
+              <!-- Tab 1: Today's Workout -->
+              <div id="phone-tab-workout" class="phone-tab-content">
+                <div class="workout-card-app">
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.65rem; font-weight: 800; color: var(--primary); text-transform: uppercase;">TODAY'S WORKOUT</span>
+                    <span style="font-size: 0.65rem; background: rgba(255,59,48,0.25); color: #fff; padding: 0.15rem 0.5rem; border-radius: 99px; font-weight: 700;">RPE 8.5</span>
+                  </div>
+                  <div style="font-weight: 800; font-size: 0.95rem;">Barbell Back Squat</div>
+                  <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #d1d5db;">
+                    <span>Target: 4 Sets • Heavy Volume</span>
+                    <strong id="app-weight-val" style="color: #ffffff;">225 lbs</strong>
+                  </div>
+
+                  <!-- Rep adjuster & Set Logger -->
+                  <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(0,0,0,0.3); border-radius: 8px; padding: 0.35rem 0.6rem;">
+                    <span style="font-size: 0.75rem; color: #9ca3af;">Set 2 of 4:</span>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                      <button id="rep-minus" style="color: #fff; background: rgba(255,255,255,0.1); width: 22px; height: 22px; border-radius: 4px; font-weight: 800;">-</button>
+                      <span id="app-reps-val" style="font-size: 0.8rem; font-weight: 800; font-family: var(--font-mono);">10 reps</span>
+                      <button id="rep-plus" style="color: #fff; background: rgba(255,255,255,0.1); width: 22px; height: 22px; border-radius: 4px; font-weight: 800;">+</button>
+                    </div>
+                  </div>
+
+                  <button id="app-log-set-btn" class="btn btn-primary btn-sm btn-full" style="padding: 0.5rem; font-size: 0.75rem; margin-top: 0.2rem;">
+                    ✓ Complete Set & Start Rest
+                  </button>
+                </div>
+
+                <!-- Live Interactive Rest Timer -->
+                <div class="timer-box">
+                  <div style="font-size: 0.65rem; color: #9ca3af; text-transform: uppercase; font-weight: 700;">Active Rest Timer</div>
+                  <div id="rest-timer-display" class="timer-digits">00:30</div>
+                  <div style="display: flex; gap: 0.4rem; justify-content: center; margin-top: 0.4rem;">
+                    <button id="timer-toggle-btn" class="btn btn-secondary btn-sm" style="padding: 0.25rem 0.65rem; font-size: 0.7rem;">Start</button>
+                    <button id="timer-reset-btn" class="btn btn-secondary btn-sm" style="padding: 0.25rem 0.65rem; font-size: 0.7rem;">Reset</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab 2: Nutrition & Macros -->
+              <div id="phone-tab-nutrition" class="phone-tab-content" style="display: none;">
+                <div style="background: rgba(255,255,255,0.04); border-radius: 12px; padding: 0.85rem; border: 1px solid rgba(255,255,255,0.08);">
+                  <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+                    <span style="font-size: 0.65rem; font-weight: 800; color: #9ca3af; text-transform: uppercase;">DAILY CALORIES</span>
+                    <strong id="app-cals-val" style="font-size: 1.1rem; color: #fff; font-family: var(--font-mono);">2,450 kcal</strong>
+                  </div>
+                  <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; margin-bottom: 0.75rem;">
+                    <div style="width: 88%; height: 100%; background: var(--primary);"></div>
+                  </div>
+
+                  <div class="telemetry-grid">
+                    <div class="telemetry-tile">
+                      <span class="telemetry-lbl">PROTEIN</span>
+                      <strong id="app-protein-val" class="telemetry-val" style="color: var(--accent-emerald);">195g</strong>
+                      <span style="font-size: 0.6rem; color: #6b7280;">Target: 210g</span>
+                    </div>
+                    <div class="telemetry-tile">
+                      <span class="telemetry-lbl">CARBS</span>
+                      <strong class="telemetry-val" style="color: var(--accent-amber);">240g</strong>
+                      <span style="font-size: 0.6rem; color: #6b7280;">Target: 260g</span>
+                    </div>
+                  </div>
+
+                  <button id="app-log-meal-btn" class="btn btn-primary btn-sm btn-full" style="margin-top: 0.75rem; padding: 0.45rem; font-size: 0.75rem;">
+                    + Quick Log Post-Workout Shake
+                  </button>
+                </div>
+              </div>
+
+              <!-- Tab 3: 1-on-1 In-App Video Call -->
+              <div id="phone-tab-video" class="phone-tab-content" style="display: none;">
+                <div style="position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 4/3; background: #000; border: 1px solid var(--primary-border);">
+                  <img src="/assets/images/coach-marcus.jpg" alt="Coach Video Call" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;" />
+                  <div style="position: absolute; top: 0.5rem; left: 0.5rem; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); padding: 0.2rem 0.5rem; border-radius: 99px; font-size: 0.65rem; color: #ef4444; font-weight: 800; display: flex; align-items: center; gap: 0.3rem;">
+                    <span style="width: 6px; height: 6px; border-radius: 50%; background: #ef4444;"></span>
+                    <span>LIVE • 14:28</span>
+                  </div>
+                  <div style="position: absolute; bottom: 0.5rem; left: 0.5rem; right: 0.5rem; background: rgba(10,10,14,0.85); backdrop-filter: blur(8px); padding: 0.4rem; border-radius: 8px; font-size: 0.65rem; color: #d1d5db;">
+                    "Chest proud on your squat depth, Alex. Let's inspect bar trajectory."
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                  <button id="video-mute-btn" style="background: rgba(255,255,255,0.1); color: #fff; padding: 0.4rem 0.75rem; border-radius: 8px; font-size: 0.7rem; font-weight: 700;">
+                    🎤 Mute
+                  </button>
+                  <button style="background: rgba(239,68,68,0.8); color: #fff; padding: 0.4rem 0.75rem; border-radius: 8px; font-size: 0.7rem; font-weight: 700;">
+                    End Call
+                  </button>
+                </div>
+              </div>
+
+              <!-- Tab 4: Telemetry -->
+              <div id="phone-tab-telemetry" class="phone-tab-content" style="display: none;">
+                <div class="telemetry-grid">
+                  <div class="telemetry-tile">
+                    <span class="telemetry-lbl">WORKOUTS DONE</span>
+                    <strong class="telemetry-val">15</strong>
+                    <span style="font-size: 0.6rem; color: var(--accent-emerald);">+3 vs last wk</span>
+                  </div>
+                  <div class="telemetry-tile">
+                    <span class="telemetry-lbl">NEW PRs</span>
+                    <strong class="telemetry-val" style="color: var(--primary);">7 PRs</strong>
+                    <span style="font-size: 0.6rem; color: #9ca3af;">Squat 315 lbs</span>
+                  </div>
+                  <div class="telemetry-tile">
+                    <span class="telemetry-lbl">ACTIVE STREAK</span>
+                    <strong class="telemetry-val" style="color: var(--accent-amber);">9 Days</strong>
+                    <span style="font-size: 0.6rem; color: #9ca3af;">Consistent</span>
+                  </div>
+                  <div class="telemetry-tile">
+                    <span class="telemetry-lbl">HRV RECOVERY</span>
+                    <strong class="telemetry-val" style="color: var(--accent-emerald);">72 ms</strong>
+                    <span style="font-size: 0.6rem; color: #9ca3af;">Apple Health Sync</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Core Pillars ("Why Us" Section) -->
+    <section class="section-pad" id="why-us" style="border-top: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <div class="pill-tag" id="pillars-section-pill">WHY <span class="dynamic-brand-name">Apex Fitness</span>?</div>
+          <h2 id="pillars-section-title">Coaching, plans and tracking in one app</h2>
+          <p id="pillars-section-desc">
+            Many fitness apps hand you a generic template and abandon you. We combine bespoke human programming, daily coach accountability, and intelligent telemetry into one seamless experience.
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+          <!-- Pillar 1 -->
+          <div class="pillar-card">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <div class="pillar-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 6.5 11 11"/><path d="m21 21-1-1"/><path d="m3 3 1 1"/><path d="m18 22 4-4"/><path d="m2 6 4-4"/><path d="m3 10 7-7"/><path d="m14 21 7-7"/></svg>
+                </div>
+                <span class="pill-tag">Bespoke</span>
+              </div>
+              <h3 style="margin-bottom: 0.75rem;">Personalized Workouts</h3>
+              <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">
+                Every rep, set, and exercise is programmed to your exact biomechanics, injuries, equipment, and schedule.
+              </p>
+              <ul class="feature-checklist">
+                <li class="feature-check-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Fatigue-regulated progressive overload</span>
+                </li>
+                <li class="feature-check-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Instant equipment toggles (Gym / Home / Hotel)</span>
+                </li>
+                <li class="feature-check-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>HD 4K exercise demonstrations</span>
+                </li>
+              </ul>
+            </div>
+            <button class="btn btn-secondary btn-full btn-open-quiz" style="margin-top: 1rem;">
+              Explore Workouts →
+            </button>
+          </div>
+
+          <!-- Pillar 2 (Featured) -->
+          <div class="pillar-card highlighted">
+            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%);">
+              <span class="badge-featured" style="padding: 0.35rem 1rem;">Human Coaching</span>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <div class="pillar-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <span class="pill-tag">1-on-1 Focus</span>
+              </div>
+              <h3 style="margin-bottom: 0.75rem;">Real Human Coach</h3>
+              <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">
+                No automated bot scripts. Partner with certified trainers who evaluate your lifting videos, guide your nutrition, and hold you accountable.
+              </p>
+              <ul class="feature-checklist">
+                <li class="feature-check-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Direct 1-on-1 video call check-ins inside the app</span>
+                </li>
+                <li class="feature-check-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Biomechanical form critique on heavy compound sets</span>
+                </li>
+                <li class="feature-check-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Precision weekly macro & calorie adjustments</span>
+                </li>
+              </ul>
+            </div>
+            <button class="btn btn-primary btn-full btn-open-quiz" style="margin-top: 1rem;">
+              Meet Certified Coaches →
+            </button>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="pillar-card">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <div class="pillar-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                </div>
+                <span class="pill-tag">Telemetry</span>
+              </div>
+              <h3 style="margin-bottom: 0.75rem;">Deep Progress Tracking</h3>
+              <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">
+                Never guess if you are improving. Monitor weekly tonnage volume, 1RM milestones, and side-by-side photographic audits.
+              </p>
+              <ul class="feature-checklist">
+                <li class="feature-check-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Automated 1RM & cumulative volume telemetry</span>
+                </li>
+                <li class="feature-check-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Private transformation photo comparison audits</span>
+                </li>
+                <li class="feature-check-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Syncs Apple Health & Health Connect sleep/HRV</span>
+                </li>
+              </ul>
+            </div>
+            <button class="btn btn-secondary btn-full btn-open-quiz" style="margin-top: 1rem;">
+              View Telemetry Tools →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Comparison Section (Typical Apps vs. The Hybrid Edge) -->
+    <section class="section-pad" id="comparison-section" style="background: var(--bg-surface);">
+      <div class="container">
+        <div class="section-header">
+          <div class="pill-tag" id="comp-section-pill">HOW WE COMPARE</div>
+          <h2 id="comp-section-title">Typical fitness apps vs. <span class="text-gradient">The Hybrid Edge</span></h2>
+          <p id="comp-section-desc">
+            PDF plans and one-size-fits-all subscription apps leave you to fend for yourself. We unite real human coaches with an all-in-one telemetry suite.
+          </p>
+        </div>
+
+        <div class="comparison-table-wrapper">
+          <div class="comp-row comp-header">
+            <div>Core Capability</div>
+            <div>Typical Fitness Apps ❌</div>
+            <div class="comp-col-highlight" style="border-top: 3px solid var(--primary);"><span class="dynamic-brand-name">Apex Fitness</span> Hybrid Edge ⚡</div>
+          </div>
+
+          <div class="comp-row">
+            <div><strong>Programming Origin</strong></div>
+            <div style="color: var(--text-muted);">Generic bot algorithms or static PDF templates</div>
+            <div class="comp-col-highlight">Certified human coach customizes every set, rep, & progression</div>
+          </div>
+
+          <div class="comp-row">
+            <div><strong>Form Critique & Safety</strong></div>
+            <div style="color: var(--text-muted);">None — you risk injury on heavy compounds</div>
+            <div class="comp-col-highlight">Direct video reviews with biomechanical movement feedback</div>
+          </div>
+
+          <div class="comp-row">
+            <div><strong>1-on-1 Video Consultations</strong></div>
+            <div style="color: var(--text-muted);">Unavailable or requires external third-party tools</div>
+            <div class="comp-col-highlight">Native HD in-app video & audio check-ins with your trainer</div>
+          </div>
+
+          <div class="comp-row">
+            <div><strong>Precision Nutrition & Macros</strong></div>
+            <div style="color: var(--text-muted);">Rigid formulas with no metabolic updates</div>
+            <div class="comp-col-highlight">Weekly coach updates based on scale, photos, and fatigue</div>
+          </div>
+
+          <div class="comp-row">
+            <div><strong>360° Health Sync</strong></div>
+            <div style="color: var(--text-muted);">Isolated workout log with zero recovery context</div>
+            <div class="comp-col-highlight">Syncs Apple Health, HRV, resting heart rate, and sleep duration</div>
+          </div>
+
+          <div class="comp-row">
+            <div><strong>Real-Time Communication</strong></div>
+            <div style="color: var(--text-muted);">Unresponsive support tickets or automated FAQs</div>
+            <div class="comp-col-highlight">Daily direct coach messaging with guaranteed reply times</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. How It Works (5-Step Stepper) -->
+    <section class="section-pad" id="how-it-works-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="pill-tag">HOW IT WORKS</div>
+          <h2>Five steps from sign-up to steady progress</h2>
+          <p>
+            A frictionless path designed to build sustainable training habits, master proper lifting mechanics, and guarantee results.
+          </p>
+        </div>
+
+        <div class="stepper-timeline">
+          <div class="step-card">
+            <span class="step-badge">01</span>
+            <h3 class="step-title">Tell Us Your Goal</h3>
+            <p class="step-desc">Share your training history, injury background, equipment access, and dream physique targets in our 60s quiz.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-badge">02</span>
+            <h3 class="step-title">Get Your Plan</h3>
+            <p class="step-desc">Your certified coach constructs your workout split and sets your daily protein, carb, fat, and calorie targets.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-badge">03</span>
+            <h3 class="step-title">Train & Log Sets</h3>
+            <p class="step-desc">Execute workouts with interactive timers, log weights and reps, and track your daily nutrition inside the mobile app.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-badge">04</span>
+            <h3 class="step-title">Coach Review & Calls</h3>
+            <p class="step-desc">Your trainer analyzes your logged volume, critiques form videos, and conducts 1-on-1 video consultations.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-badge">05</span>
+            <h3 class="step-title">Relentless Progress</h3>
+            <p class="step-desc">Experience progressive overload, shatter personal records, and witness measurable body recomp month after month.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Coaches Directory & Marketplace -->
+    <section class="section-pad" id="coaches-section" style="background: var(--bg-surface);">
+      <div class="container">
+        <div class="section-header">
+          <div class="pill-tag" id="coaches-section-pill">COACH DIRECTORY</div>
+          <h2 id="coaches-section-title">Train with certified world-class coaches</h2>
+          <p id="coaches-section-desc">
+            Browse verified personal trainers, view client reviews, and book a direct 1-on-1 strategy call today.
+          </p>
+        </div>
+
+        <!-- Controls: Category Pills & Search -->
+        <div class="coaches-controls">
+          <div class="filter-pills-row">
+            <button class="filter-btn coach-filter-btn active" data-category="all">All Specialties</button>
+            <button class="filter-btn coach-filter-btn" data-category="strength">Strength & Power</button>
+            <button class="filter-btn coach-filter-btn" data-category="hypertrophy">Hypertrophy & Muscle</button>
+            <button class="filter-btn coach-filter-btn" data-category="fatloss">Fat Loss & Recomp</button>
+            <button class="filter-btn coach-filter-btn" data-category="rehab">Sports Rehab & Mobility</button>
+          </div>
+
+          <div class="search-input-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" id="coach-search-input" placeholder="Search coach by name or focus..." />
+          </div>
+        </div>
+
+        <!-- Dynamic Coach Cards Grid -->
+        <div class="coaches-grid" id="coaches-grid-container">
+          <!-- Populated by coaches.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Draggable Transformation Before / After Gallery -->
+    <section class="section-pad" id="transformations-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="pill-tag">REAL ATHLETE TRANSFORMATIONS</div>
+          <h2>Documented proof. Real human results.</h2>
+          <p>
+            Drag the interactive slider below to inspect Marcus's 7-month transformation under our hybrid coaching methodology.
+          </p>
+        </div>
+
+        <!-- Draggable Before/After Container -->
+        <div class="ba-container" id="ba-slider-container">
+          <div class="ba-image-wrapper ba-before">
+            <img src="/assets/images/transformation-marcus.jpg" alt="Marcus Transformation Full" />
+            <span class="ba-tag ba-tag-before">Before & After Progression</span>
+          </div>
+
+          <div class="ba-image-wrapper ba-after" id="ba-after-wrapper">
+            <img src="/assets/images/transformation-marcus.jpg" alt="Marcus Result Focus" />
+            <span class="ba-tag ba-tag-after">Interactive Reveal</span>
+          </div>
+
+          <div class="ba-handle" id="ba-handle" aria-label="Drag to compare before and after">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18-6-6 6-6"/><path d="m15 6 6 6-6 6"/></svg>
+          </div>
+        </div>
+
+        <!-- Metric Badges below Transformation -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 800px; margin: 2.5rem auto 0 auto; text-align: center;">
+          <div class="card-glass" style="padding: 1.25rem;">
+            <div style="font-size: 1.8rem; font-weight: 900; color: var(--primary); font-family: var(--font-display);">-13 lbs</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700;">Scale Fat Loss</div>
+          </div>
+          <div class="card-glass" style="padding: 1.25rem;">
+            <div style="font-size: 1.8rem; font-weight: 900; color: var(--accent-emerald); font-family: var(--font-display);">18% → 8%</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700;">Body Fat Reduction</div>
+          </div>
+          <div class="card-glass" style="padding: 1.25rem;">
+            <div style="font-size: 1.8rem; font-weight: 900; color: var(--text-main); font-family: var(--font-display);">+45 lbs</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700;">Squat 1RM Increase</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Services & Partner Stores Marketplace -->
+    <section class="section-pad" id="services-section" style="background: var(--bg-surface);">
+      <div class="container">
+        <div class="section-header">
+          <div class="pill-tag" id="services-section-pill">ECOSYSTEM MARKETPLACE</div>
+          <h2 id="services-section-title">Services & Partner Stores</h2>
+          <p id="services-section-desc">
+            Fuel your recovery and nutrition with verified clinical partners, gourmet meal delivery, and biohacking essentials.
+          </p>
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 0.6rem; margin-bottom: 2.5rem;">
+          <button class="filter-btn service-filter-btn active" data-category="all">All Ecosystem Partners</button>
+          <button class="filter-btn service-filter-btn" data-category="nutrition">Macro Meal Prep</button>
+          <button class="filter-btn service-filter-btn" data-category="recovery">Clinical Recovery</button>
+          <button class="filter-btn service-filter-btn" data-category="supplements">Supplements & Biohacking</button>
+        </div>
+
+        <div class="services-grid" id="services-grid-container">
+          <!-- Populated by services.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. For Coaches B2B Platform -->
+    <section class="section-pad" id="for-coaches-section">
+      <div class="container">
+        <div class="b2b-box">
+          <div>
+            <div class="pill-tag" style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.2);">
+              FOR PROFESSIONAL COACHES
+            </div>
+            <h2 id="b2b-heading" style="font-size: clamp(2rem, 3.5vw, 2.8rem); margin: 1rem 0;">Run your coaching business from one unified place.</h2>
+            <p id="b2b-subheading" style="font-size: 1.05rem; color: #d1d5db; max-width: 580px;">
+              Manage clients, program custom workout and nutrition splits, conduct HD video check-ins, and receive automated Stripe payouts without juggling four disconnected apps.
+            </p>
+
+            <div class="b2b-perks">
+              <div class="b2b-perk">
+                <h4>✓ Workout & Meal Builder</h4>
+                <p>Drag-and-drop exercise library with custom sets, rest periods, and macro targets.</p>
+              </div>
+              <div class="b2b-perk">
+                <h4>✓ Client Roster & Video</h4>
+                <p>Host integrated 1-on-1 video calls directly inside the app with zero Zoom links.</p>
+              </div>
+              <div class="b2b-perk">
+                <h4>✓ Telemetry Analytics</h4>
+                <p>Track client adherence, volume trends, and photo check-ins with automated alerts.</p>
+              </div>
+              <div class="b2b-perk">
+                <h4>✓ Automated Stripe Billing</h4>
+                <p>Collect monthly subscription retainers with instant direct deposits to your bank.</p>
+              </div>
+            </div>
+
+            <div style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+              <button class="btn btn-primary btn-lg btn-open-coach-apply">
+                Apply as a Coach →
+              </button>
+              <a href="#pricing-section" class="btn btn-secondary btn-lg">
+                View Coach Pricing
+              </a>
+            </div>
+          </div>
+
+          <!-- Coach Portal Preview Widget -->
+          <div class="b2b-preview-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.85rem;">
+              <span style="font-weight: 800; font-size: 0.9rem;">Coach Portal Telemetry</span>
+              <span class="badge-status">Stripe Connected</span>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+              <div style="background: var(--bg-surface); padding: 0.85rem; border-radius: 10px; border: 1px solid var(--border-subtle);">
+                <div style="font-size: 0.7rem; color: var(--text-muted);">ACTIVE ATHLETES</div>
+                <div style="font-size: 1.35rem; font-weight: 900; color: #fff;">48</div>
+              </div>
+              <div style="background: var(--bg-surface); padding: 0.85rem; border-radius: 10px; border: 1px solid var(--border-subtle);">
+                <div style="font-size: 0.7rem; color: var(--text-muted);">MONTHLY REVENUE</div>
+                <div style="font-size: 1.35rem; font-weight: 900; color: var(--accent-emerald);">$7,152</div>
+              </div>
+            </div>
+
+            <div style="background: var(--bg-surface); padding: 0.85rem; border-radius: 10px; border: 1px solid var(--border-subtle);">
+              <div style="font-size: 0.75rem; font-weight: 800; margin-bottom: 0.5rem;">Pending Check-Ins (3 Today):</div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.75rem;">
+                <div style="display: flex; justify-content: space-between;">
+                  <span>• Alex Johnson (Leg Day Video)</span>
+                  <strong style="color: var(--primary);">Review Form</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                  <span>• Sarah Miller (Macro Audit)</span>
+                  <strong style="color: var(--accent-emerald);">Logged</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Dynamic Pricing Section -->
+    <section class="section-pad" id="pricing-section" style="background: var(--bg-surface);">
+      <div class="container" style="text-align: center;">
+        <div class="section-header">
+          <div class="pill-tag" id="pricing-section-pill">MEMBERSHIP TIERS</div>
+          <h2 id="pricing-section-title">Invest in your highest potential</h2>
+          <p id="pricing-section-desc">
+            Choose autonomous AI programming or partner with a dedicated certified coach for maximum accountability.
+          </p>
+        </div>
+
+        <!-- Billing Cycle Switcher -->
+        <div class="billing-switcher">
+          <button class="billing-toggle-btn active" data-period="monthly">Monthly</button>
+          <button class="billing-toggle-btn" data-period="quarterly">
+            <span>Quarterly</span>
+            <span style="font-size: 0.65rem; background: rgba(255,255,255,0.2); padding: 0.15rem 0.4rem; border-radius: 99px;">Save 15%</span>
+          </button>
+          <button class="billing-toggle-btn" data-period="annual">
+            <span>Annual</span>
+            <span style="font-size: 0.65rem; background: var(--accent-emerald); color: #fff; padding: 0.15rem 0.4rem; border-radius: 99px; font-weight: 800;">Save 30%</span>
+          </button>
+        </div>
+        <p id="pricing-billing-note" style="font-size: 0.85rem; margin-top: -2.5rem; margin-bottom: 3rem; color: var(--text-muted);">
+          Billed monthly. Cancel anytime with 1 click.
+        </p>
+
+        <!-- Pricing Grid -->
+        <div class="pricing-grid">
+          <!-- Tier 1 -->
+          <div class="pricing-card">
+            <div>
+              <span class="pill-tag">Autonomous</span>
+              <h3 style="margin-top: 0.75rem;">Autonomous AI</h3>
+              <p style="font-size: 0.85rem; margin-top: 0.5rem;">Smart algorithm-based programming and macro logging.</p>
+              <div class="pricing-amount" id="price-tier-ai">$39<span>/mo</span></div>
+              <ul class="feature-checklist" style="text-align: left; margin-top: 1.5rem;">
+                <li class="feature-check-item"><span>✓ Dynamic workout generator</span></li>
+                <li class="feature-check-item"><span>✓ Automated macro & calorie calculator</span></li>
+                <li class="feature-check-item"><span>✓ Set & Rest timer telemetry</span></li>
+                <li class="feature-check-item"><span>✓ Apple Health & Health Connect sync</span></li>
+                <li class="feature-check-item" style="color: var(--text-dim);"><span>✕ Human coach video calls</span></li>
+                <li class="feature-check-item" style="color: var(--text-dim);"><span>✕ Biomechanical form audits</span></li>
+              </ul>
+            </div>
+            <button class="btn btn-secondary btn-full btn-select-plan" data-plan="Autonomous AI">
+              Start Autonomous Plan
+            </button>
+          </div>
+
+          <!-- Tier 2 (Featured) -->
+          <div class="pricing-card featured">
+            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%);">
+              <span class="badge-featured" style="padding: 0.35rem 1.25rem;">MOST POPULAR</span>
+            </div>
+            <div>
+              <span class="pill-tag" style="background: var(--primary); color: #fff;">Hybrid Pro</span>
+              <h3 style="margin-top: 0.75rem;">AI + Dedicated Coach</h3>
+              <p style="font-size: 0.85rem; margin-top: 0.5rem;">The complete package: real human coach with full telemetry app.</p>
+              <div class="pricing-amount" id="price-tier-coach" style="color: var(--primary);">$149<span>/mo</span></div>
+              <ul class="feature-checklist" style="text-align: left; margin-top: 1.5rem;">
+                <li class="feature-check-item"><span>✓ <strong>Everything in Autonomous AI</strong></span></li>
+                <li class="feature-check-item"><span>✓ <strong>Certified 1-on-1 Dedicated Human Coach</strong></span></li>
+                <li class="feature-check-item"><span>✓ Bi-weekly in-app 1-on-1 video consultations</span></li>
+                <li class="feature-check-item"><span>✓ Weekly personalized workout & macro adjustments</span></li>
+                <li class="feature-check-item"><span>✓ Video form check & biomechanical critiques</span></li>
+                <li class="feature-check-item"><span>✓ Daily coach direct chat access</span></li>
+              </ul>
+            </div>
+            <button class="btn btn-primary btn-full btn-select-plan" data-plan="AI + Dedicated Coach Pro">
+              Start 7-Day Free Trial →
+            </button>
+          </div>
+
+          <!-- Tier 3 -->
+          <div class="pricing-card">
+            <div>
+              <span class="pill-tag">VIP Elite</span>
+              <h3 style="margin-top: 0.75rem;">VIP 1-on-1 Elite</h3>
+              <p style="font-size: 0.85rem; margin-top: 0.5rem;">For competitive athletes, executives, and rapid recomp transformations.</p>
+              <div class="pricing-amount" id="price-tier-vip">$279<span>/mo</span></div>
+              <ul class="feature-checklist" style="text-align: left; margin-top: 1.5rem;">
+                <li class="feature-check-item"><span>✓ <strong>Everything in Hybrid Pro</strong></span></li>
+                <li class="feature-check-item"><span>✓ <strong>Weekly 1-on-1 HD video strategy calls</strong></span></li>
+                <li class="feature-check-item"><span>✓ Priority 1-hour coach response guarantee</span></li>
+                <li class="feature-check-item"><span>✓ Bloodwork & biomarker interpretation</span></li>
+                <li class="feature-check-item"><span>✓ Direct coach phone & WhatsApp VIP access</span></li>
+                <li class="feature-check-item"><span>✓ Complimentary partner meal prep discounts</span></li>
+              </ul>
+            </div>
+            <button class="btn btn-secondary btn-full btn-select-plan" data-plan="VIP 1-on-1 Elite">
+              Apply for VIP Elite
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Frequently Asked Questions -->
+    <section class="section-pad" id="faq-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="pill-tag" id="faqs-section-pill">FREQUENTLY ASKED QUESTIONS</div>
+          <h2 id="faqs-section-title">Everything you need to know</h2>
+          <p id="faqs-section-desc">
+            Have questions about pairing with a coach, nutrition plans, or billing? We have answers.
+          </p>
+        </div>
+
+        <div style="max-width: 600px; margin: 0 auto 2.5rem auto;">
+          <div class="search-input-box" style="width: 100%;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" id="faq-search-input" placeholder="Search questions (e.g., video calls, diet, cancellation)..." />
+          </div>
+        </div>
+
+        <div class="faq-list" id="faq-accordion-container">
+          <!-- Populated by faq.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Final High-Impact CTA -->
+    <section class="container" style="margin-bottom: 5rem;">
+      <div class="final-cta-box">
+        <h2 id="final-cta-heading">Ready to build your ultimate physique?</h2>
+        <p id="final-cta-desc">
+          Take our 60-second assessment, get paired with your certified coach, and claim your 7-day complimentary trial today.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <button class="btn btn-secondary btn-lg btn-open-quiz" id="final-cta-btn" style="background: #fff; color: #000; font-weight: 900;">
+            Start 60s Coach Assessment →
+          </button>
+          <button class="btn btn-glass btn-lg btn-open-coach-apply" style="color: #fff; border-color: rgba(255,255,255,0.4);">
+            Join as a Coach
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+          <div class="brand-logo">
+            <div class="brand-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 18h12"/><path d="M12 2v20"/><path d="m6 8 6-6 6 6"/></svg>
+            </div>
+            <span><span class="dynamic-brand-name">Apex Fitness</span><span class="brand-dot">.</span></span>
+          </div>
+          <p style="font-size: 0.85rem; line-height: 1.6; max-width: 320px;">
+            The premier online coaching ecosystem uniting certified personal trainers, real-time telemetry, nutrition precision, and in-app video consultations.
+          </p>
+          <form id="newsletter-form" style="display: flex; gap: 0.5rem; max-width: 320px;">
+            <input type="email" required placeholder="Enter email for research digest..." style="background: var(--bg-surface-elevated); border: 1px solid var(--border-medium); border-radius: 8px; padding: 0.5rem 0.85rem; font-size: 0.8rem; color: #fff; flex: 1;" />
+            <button type="submit" class="btn btn-primary btn-sm">Join</button>
+          </form>
+        </div>
+
+        <div class="footer-col">
+          <h4>Athletes</h4>
+          <ul class="footer-links">
+            <li><a href="#coaches-section">Find a Coach</a></li>
+            <li><a href="#pricing-section">Pricing Plans</a></li>
+            <li><a href="#how-it-works-section">How It Works</a></li>
+            <li><a href="#transformations-section">Member Stories</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Marketplace</h4>
+          <ul class="footer-links">
+            <li><a href="#services-section">Meal Prep Delivery</a></li>
+            <li><a href="#services-section">Sports Therapy</a></li>
+            <li><a href="#services-section">Biohacking Store</a></li>
+            <li><a href="#services-section">Merch & Gear</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>For Coaches</h4>
+          <ul class="footer-links">
+            <li><a href="#for-coaches-section" class="btn-open-coach-apply">Coach Platform</a></li>
+            <li><a href="#for-coaches-section" class="btn-open-coach-apply">Apply to Coach</a></li>
+            <li><a href="#for-coaches-section">Workout Builder</a></li>
+            <li><a href="#for-coaches-section">Stripe Billing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact Support</a></li>
+            <li><a href="/admin.html">Admin CMS Studio ⚙️</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 <span class="dynamic-brand-name">Apex Fitness</span> Technologies Inc. All rights reserved.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Security</a>
+          <a href="#">System Status</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODALS: COACH QUIZ, BOOKING, PROFILE, CHECKOUT & COACH APPLICATION
+       ========================================================================== -->
+
+  <!-- 1. Coach Matching Quiz Modal -->
+  <div class="modal-overlay" id="quiz-modal">
+    <div class="modal-dialog">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <span class="pill-tag" id="quiz-step-indicator">Step 1 of 3</span>
+        <div style="width: 120px; height: 6px; background: var(--bg-surface); border-radius: 99px; overflow: hidden;">
+          <div id="quiz-progress-fill" style="width: 33%; height: 100%; background: var(--primary); transition: width 0.3s ease;"></div>
+        </div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="quiz-step" data-step="1">
+        <h3 style="margin-bottom: 0.5rem;">What is your primary fitness goal?</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">We match you with coaches who have verified mastery in this discipline.</p>
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <button class="btn btn-secondary btn-full quiz-option-btn active" data-value="hypertrophy" style="justify-content: flex-start; padding: 1rem;">
+            💪 Hypertrophy & Maximum Muscle Gain
+          </button>
+          <button class="btn btn-secondary btn-full quiz-option-btn" data-value="fatloss" style="justify-content: flex-start; padding: 1rem;">
+            🔥 Rapid Fat Loss & Body Recomposition
+          </button>
+          <button class="btn btn-secondary btn-full quiz-option-btn" data-value="strength" style="justify-content: flex-start; padding: 1rem;">
+            ⚡ Barbell Strength & Powerlifting
+          </button>
+          <button class="btn btn-secondary btn-full quiz-option-btn" data-value="rehab" style="justify-content: flex-start; padding: 1rem;">
+            🩺 Joint Rehab, Posture & Athletic Mobility
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="quiz-step" data-step="2" style="display: none;">
+        <h3 style="margin-bottom: 0.5rem;">Where will you train?</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Your coach will customize your program based on your available equipment.</p>
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <button class="btn btn-secondary btn-full quiz-option-btn active" data-value="gym" style="justify-content: flex-start; padding: 1rem;">
+            🏋️ Full Commercial Gym (Barbells, Cables, Machines)
+          </button>
+          <button class="btn btn-secondary btn-full quiz-option-btn" data-value="home" style="justify-content: flex-start; padding: 1rem;">
+            🏠 Home Gym (Dumbbells, Bench, Pull-up Bar)
+          </button>
+          <button class="btn btn-secondary btn-full quiz-option-btn" data-value="minimal" style="justify-content: flex-start; padding: 1rem;">
+            ✈️ Minimal Travel / Bodyweight & Resistance Bands
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="quiz-step" data-step="3" style="display: none;">
+        <h3 style="margin-bottom: 0.5rem;">Preferred coaching dynamic?</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">How would you like to communicate with your personal trainer?</p>
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <button class="btn btn-secondary btn-full quiz-option-btn active" data-value="video" style="justify-content: flex-start; padding: 1rem;">
+            📹 High Accountability: Weekly 1-on-1 Video Calls
+          </button>
+          <button class="btn btn-secondary btn-full quiz-option-btn" data-value="formcheck" style="justify-content: flex-start; padding: 1rem;">
+            🎯 Video Form Checks & Daily Chat Coaching
+          </button>
+          <button class="btn btn-secondary btn-full quiz-option-btn" data-value="autonomous" style="justify-content: flex-start; padding: 1rem;">
+            📊 Data-Driven: Macro & Telemetry Audits
+          </button>
+        </div>
+      </div>
+
+      <!-- Results view -->
+      <div id="quiz-results-container" style="display: none;">
+        <div id="quiz-matched-coach-card"></div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.75rem;">
+        <button id="quiz-prev-btn" class="btn btn-secondary btn-sm" style="visibility: hidden;">
+          ← Back
+        </button>
+        <button id="quiz-next-btn" class="btn btn-primary btn-sm">
+          Continue →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Coach Booking Modal -->
+  <div class="modal-overlay" id="booking-modal">
+    <div class="modal-dialog">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div id="booking-modal-content"></div>
+    </div>
+  </div>
+
+  <!-- 3. Coach Profile Modal -->
+  <div class="modal-overlay" id="profile-modal">
+    <div class="modal-dialog">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div id="profile-modal-content"></div>
+    </div>
+  </div>
+
+  <!-- 4. Membership Checkout Modal -->
+  <div class="modal-overlay" id="checkout-modal">
+    <div class="modal-dialog">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div id="checkout-modal-content"></div>
+    </div>
+  </div>
+
+  <!-- 5. Coach Application Modal -->
+  <div class="modal-overlay" id="coach-apply-modal">
+    <div class="modal-dialog">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <span class="pill-tag">Coach Recruitment</span>
+        <h3 style="font-size: 1.5rem; margin-top: 0.5rem;">Apply as a Certified Coach</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Join our elite roster of trainers and scale your business with full software support.</p>
+      </div>
+      <form id="coach-application-form" style="display: flex; flex-direction: column; gap: 1rem;">
+        <div>
+          <label style="font-size: 0.8rem; font-weight: 700; color: var(--text-main); display: block; margin-bottom: 0.35rem;">Full Name</label>
+          <input type="text" required placeholder="Coach Brandon Reed" style="width: 100%; padding: 0.75rem 1rem; border-radius: 10px; background: var(--bg-surface); border: 1px solid var(--border-medium); color: var(--text-main);" />
+        </div>
+        <div>
+          <label style="font-size: 0.8rem; font-weight: 700; color: var(--text-main); display: block; margin-bottom: 0.35rem;">Primary Certifications (e.g. CSCS, NASM, CISSN)</label>
+          <input type="text" required placeholder="NSCA-CSCS, Precision Nutrition Lv 1" style="width: 100%; padding: 0.75rem 1rem; border-radius: 10px; background: var(--bg-surface); border: 1px solid var(--border-medium); color: var(--text-main);" />
+        </div>
+        <div>
+          <label style="font-size: 0.8rem; font-weight: 700; color: var(--text-main); display: block; margin-bottom: 0.35rem;">Coaching Experience & Athlete Count</label>
+          <select style="width: 100%; padding: 0.75rem 1rem; border-radius: 10px; background: var(--bg-surface); border: 1px solid var(--border-medium); color: var(--text-main);">
+            <option>1 - 3 Years (15 - 50 Athletes)</option>
+            <option>3 - 7 Years (50 - 200 Athletes)</option>
+            <option>7+ Years (200+ Athletes)</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size: 0.8rem; font-weight: 700; color: var(--text-main); display: block; margin-bottom: 0.35rem;">Email & Phone</label>
+          <input type="email" required placeholder="brandon@coach.com" style="width: 100%; padding: 0.75rem 1rem; border-radius: 10px; background: var(--bg-surface); border: 1px solid var(--border-medium); color: var(--text-main); margin-bottom: 0.5rem;" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">
+          Submit Coach Application →
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="/src/scripts/main.js"></script>
+</body>
+</html>
