@@ -32,12 +32,12 @@
       </div>
 
       <form id="admin-login-form">
-        <div class="form-group" style="margin-bottom: 1.25rem;">
+        <div class="form-group form-group-mb">
           <label class="form-label" for="login-email">Admin Email Address</label>
           <input type="email" id="login-email" class="admin-input" placeholder="admin@apexfitness.com" required autocomplete="email" />
         </div>
 
-        <div class="form-group" style="margin-bottom: 0.5rem;">
+        <div class="form-group form-group-mb-sm">
           <label class="form-label" for="login-password">Admin Password</label>
           <div class="auth-input-wrapper">
             <input type="password" id="login-password" class="admin-input" placeholder="••••••••" required autocomplete="current-password" />
@@ -50,20 +50,20 @@
             <input type="checkbox" id="login-remember" checked />
             <span>Keep me signed in</span>
           </label>
-          <span style="color: var(--primary); font-size: 0.775rem; font-weight: 700;">Protected Area</span>
+          <span class="auth-protected-badge">Protected Area</span>
         </div>
 
-        <button type="submit" id="btn-login-submit" class="btn btn-primary btn-full btn-lg" style="font-weight: 800;">
+        <button type="submit" id="btn-login-submit" class="btn btn-primary btn-full btn-lg auth-submit-btn">
           Sign In to CMS Studio →
         </button>
       </form>
 
       <div class="auth-demo-badge">
         <div>
-          <span style="font-weight: 800; color: #fff;">Default Login:</span><br />
+          <span class="auth-default-label">Default Login:</span><br />
           <span id="demo-email-hint">admin@apexfitness.com</span> / <span id="demo-pwd-hint">admin123</span>
         </div>
-        <button type="button" id="btn-autofill-demo" class="btn btn-secondary btn-sm" style="font-size: 0.75rem; padding: 0.35rem 0.75rem;">
+        <button type="button" id="btn-autofill-demo" class="btn btn-secondary btn-sm auth-autofill-btn">
           Quick Fill
         </button>
       </div>
@@ -75,7 +75,7 @@
   </div>
 
   <!-- 2. AUTHENTICATED DASHBOARD WRAPPER -->
-  <div id="admin-dashboard-wrapper" style="display: none; width: 100%;">
+  <div id="admin-dashboard-wrapper">
 
     <!-- Admin Header -->
     <header class="admin-header">
@@ -83,7 +83,7 @@
         <div class="admin-logo-box">⚙️</div>
         <div>
           <div class="admin-brand-title">CMS Studio • <span class="dynamic-brand-name">Apex Fitness</span></div>
-          <div style="font-size: 0.725rem; color: #9ca3af;">Dynamic Multi-Tenant Customizer Hub</div>
+          <div class="admin-brand-subtitle">Dynamic Multi-Tenant Customizer Hub</div>
         </div>
       </div>
 
@@ -93,11 +93,11 @@
           <span>Auto-Sync Active</span>
         </div>
 
-        <button id="btn-reset-defaults" class="btn btn-secondary btn-sm" style="color: #ef4444; border-color: rgba(239,68,68,0.3);" title="Reset to default settings">
+        <button id="btn-reset-defaults" class="btn btn-secondary btn-sm btn-danger-outline" title="Reset to default settings">
           ↺ Reset Defaults
         </button>
 
-        <a href="/" target="_blank" class="btn btn-secondary btn-sm" style="display: flex; align-items: center; gap: 0.4rem;">
+        <a href="/" target="_blank" class="btn btn-secondary btn-sm btn-with-icon">
           <span>View Live Site</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
@@ -106,7 +106,7 @@
           <span>Save & Publish 💾</span>
         </button>
 
-        <button id="btn-admin-logout" class="btn btn-secondary btn-sm" style="color: #ef4444; border-color: rgba(239,68,68,0.3); display: flex; align-items: center; gap: 0.4rem;" title="Sign out of CMS Studio">
+        <button id="btn-admin-logout" class="btn btn-secondary btn-sm btn-danger-outline btn-with-icon" title="Sign out of CMS Studio">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
           <span>Log Out</span>
         </button>
@@ -198,27 +198,27 @@
               <label class="form-label">Custom Color Picker</label>
               <div class="color-picker-row">
                 <input type="color" id="brand-color-picker" class="color-input-native" value="#FF3B30" />
-                <input type="text" id="brand-color-hex" class="admin-input" style="font-family: var(--font-mono); width: 140px;" value="#FF3B30" />
+                <input type="text" id="brand-color-hex" class="admin-input color-hex-input" value="#FF3B30" />
                 <span class="form-hint">Click box or type Hex</span>
               </div>
             </div>
 
             <div class="form-group">
               <label class="form-label">Curated Athletic Presets</label>
-              <div style="display: flex; gap: 0.6rem; align-items: center; margin-top: 0.4rem; flex-wrap: wrap;">
-                <button type="button" id="swatch-red" class="swatch-preset-btn btn btn-secondary btn-sm" data-hex="#FF3B30" data-hue="5" style="border-left: 5px solid #FF3B30;">
+              <div class="swatches-flex-row">
+                <button type="button" id="swatch-red" class="swatch-preset-btn swatch-red btn btn-secondary btn-sm" data-hex="#FF3B30" data-hue="5">
                   Crimson Red (#FF3B30)
                 </button>
-                <button type="button" id="swatch-blue" class="swatch-preset-btn btn btn-secondary btn-sm" data-hex="#2563EB" data-hue="221" style="border-left: 5px solid #2563EB;">
+                <button type="button" id="swatch-blue" class="swatch-preset-btn swatch-blue btn btn-secondary btn-sm" data-hex="#2563EB" data-hue="221">
                   Royal Blue (#2563EB)
                 </button>
-                <button type="button" id="swatch-green" class="swatch-preset-btn btn btn-secondary btn-sm" data-hex="#059669" data-hue="160" style="border-left: 5px solid #059669;">
+                <button type="button" id="swatch-green" class="swatch-preset-btn swatch-green btn btn-secondary btn-sm" data-hex="#059669" data-hue="160">
                   Forest Green (#059669)
                 </button>
-                <button type="button" id="swatch-amber" class="swatch-preset-btn btn btn-secondary btn-sm" data-hex="#D97706" data-hue="37" style="border-left: 5px solid #D97706;">
+                <button type="button" id="swatch-amber" class="swatch-preset-btn swatch-amber btn btn-secondary btn-sm" data-hex="#D97706" data-hue="37">
                   Warm Amber (#D97706)
                 </button>
-                <button type="button" id="swatch-violet" class="swatch-preset-btn btn btn-secondary btn-sm" data-hex="#7C3AED" data-hue="262" style="border-left: 5px solid #7C3AED;">
+                <button type="button" id="swatch-violet" class="swatch-preset-btn swatch-violet btn btn-secondary btn-sm" data-hex="#7C3AED" data-hue="262">
                   Deep Violet (#7C3AED)
                 </button>
               </div>
@@ -336,7 +336,7 @@
           <button class="btn btn-primary btn-sm btn-save-all">Save Changes</button>
         </div>
 
-        <div class="admin-card" style="margin-bottom: 1.5rem;">
+        <div class="admin-card admin-card-mb">
           <div class="admin-card-title">Pillars Section Header</div>
           <div class="form-grid">
             <div class="form-group">
@@ -366,13 +366,13 @@
             <h2>⚖️ Comparison Matrix Manager</h2>
             <p>Edit side-by-side differentiators between typical generic fitness apps and your Hybrid Edge.</p>
           </div>
-          <div style="display: flex; gap: 0.5rem;">
+          <div class="pane-actions-row">
             <button id="btn-add-comp-row" class="btn btn-secondary btn-sm">+ Add Comparison Row</button>
             <button class="btn btn-primary btn-sm btn-save-all">Save Changes</button>
           </div>
         </div>
 
-        <div class="admin-card" style="margin-bottom: 1.5rem;">
+        <div class="admin-card admin-card-mb">
           <div class="admin-card-title">Comparison Section Header</div>
           <div class="form-grid">
             <div class="form-group">
@@ -390,10 +390,10 @@
           <table class="admin-table">
             <thead>
               <tr>
-                <th style="width: 25%;">Capability / Feature</th>
-                <th style="width: 35%;">Typical Apps ❌</th>
-                <th style="width: 35%;">Hybrid Edge ⚡</th>
-                <th style="width: 5%;">Action</th>
+                <th class="th-comp-feature">Capability / Feature</th>
+                <th class="th-comp-typical">Typical Apps ❌</th>
+                <th class="th-comp-hybrid">Hybrid Edge ⚡</th>
+                <th class="th-comp-action">Action</th>
               </tr>
             </thead>
             <tbody id="comparison-table-body">
@@ -410,13 +410,13 @@
             <h2>👥 Certified Coaches Directory (CRUD)</h2>
             <p>Add new personal trainers, modify bios, rates, review scores, and photography.</p>
           </div>
-          <div style="display: flex; gap: 0.5rem;">
+          <div class="pane-actions-row">
             <button id="btn-add-coach" class="btn btn-secondary btn-sm">+ Add New Coach</button>
             <button class="btn btn-primary btn-sm btn-save-all">Save Changes</button>
           </div>
         </div>
 
-        <div class="admin-card" style="margin-bottom: 1.5rem;">
+        <div class="admin-card admin-card-mb">
           <div class="admin-card-title">Coaches Section Header</div>
           <div class="form-grid">
             <div class="form-group">
@@ -442,13 +442,13 @@
             <h2>🛍️ Services & Partner Stores (CRUD)</h2>
             <p>Manage ecosystem vendors: Meal prep companies, physical therapy clinics, and supplements.</p>
           </div>
-          <div style="display: flex; gap: 0.5rem;">
+          <div class="pane-actions-row">
             <button id="btn-add-service" class="btn btn-secondary btn-sm">+ Add Partner Store</button>
             <button class="btn btn-primary btn-sm btn-save-all">Save Changes</button>
           </div>
         </div>
 
-        <div class="admin-card" style="margin-bottom: 1.5rem;">
+        <div class="admin-card admin-card-mb">
           <div class="admin-card-title">Services Section Header</div>
           <div class="form-grid">
             <div class="form-group">
@@ -477,7 +477,7 @@
           <button class="btn btn-primary btn-sm btn-save-all">Save Changes</button>
         </div>
 
-        <div class="admin-card" style="margin-bottom: 1.5rem;">
+        <div class="admin-card admin-card-mb">
           <div class="admin-card-title">Pricing & B2B Platform Headers</div>
           <div class="form-grid">
             <div class="form-group">
@@ -511,13 +511,13 @@
             <h2>❓ FAQ Manager (CRUD)</h2>
             <p>Update answers to client objections, billing inquiries, and onboarding procedures.</p>
           </div>
-          <div style="display: flex; gap: 0.5rem;">
+          <div class="pane-actions-row">
             <button id="btn-add-faq" class="btn btn-secondary btn-sm">+ Add FAQ Item</button>
             <button class="btn btn-primary btn-sm btn-save-all">Save Changes</button>
           </div>
         </div>
 
-        <div class="admin-card" style="margin-bottom: 1.5rem;">
+        <div class="admin-card admin-card-mb">
           <div class="admin-card-title">FAQ Section Header</div>
           <div class="form-grid">
             <div class="form-group">
@@ -543,16 +543,16 @@
             <h2>💾 Backup, Export & JSON Sync</h2>
             <p>Export full site configuration as JSON to duplicate setups or transfer across clients.</p>
           </div>
-          <div style="display: flex; gap: 0.5rem;">
+          <div class="pane-actions-row">
             <button id="btn-export-json" class="btn btn-secondary btn-sm">Export JSON 📥</button>
             <button id="btn-import-json" class="btn btn-secondary btn-sm">Import JSON 📤</button>
-            <input type="file" id="import-file-input" accept=".json" style="display: none;" />
+            <input type="file" id="import-file-input" accept=".json" class="hidden-file-input" />
           </div>
         </div>
 
         <div class="admin-card">
           <div class="admin-card-title">Raw JSON Configuration</div>
-          <textarea id="backup-json-textarea" class="admin-textarea" style="font-family: var(--font-mono); font-size: 0.8rem; height: 400px;" readonly></textarea>
+          <textarea id="backup-json-textarea" class="admin-textarea backup-json-box" readonly></textarea>
         </div>
       </section>
 
@@ -561,10 +561,10 @@
 
   <!-- Sticky Save Floating Bar -->
   <aside class="admin-save-bar">
-    <div style="font-size: 0.85rem; font-weight: 700; color: #fff;">
+    <div class="save-bar-hint">
       ⚡ Unsaved drafts sync in real-time
     </div>
-    <div style="display: flex; gap: 0.6rem;">
+    <div class="save-bar-actions">
       <a href="/" target="_blank" class="btn btn-secondary btn-sm">Preview Live Site ↗</a>
       <button class="btn btn-primary btn-sm btn-save-all">Save & Publish 💾</button>
     </div>
@@ -573,18 +573,18 @@
 
   <!-- Coach Edit/Add Modal -->
   <div class="modal-overlay" id="admin-coach-modal">
-    <div class="modal-dialog" style="max-width: 680px;">
+    <div class="modal-dialog modal-coach-dialog">
       <button class="modal-close modal-close-trigger" aria-label="Close modal">&times;</button>
-      <h3 style="margin-bottom: 1rem;">Coach Profile Editor</h3>
+      <h3 class="modal-form-heading">Coach Profile Editor</h3>
       <form id="admin-coach-form"></form>
     </div>
   </div>
 
   <!-- Service Edit/Add Modal -->
   <div class="modal-overlay" id="admin-service-modal">
-    <div class="modal-dialog" style="max-width: 620px;">
+    <div class="modal-dialog modal-service-dialog">
       <button class="modal-close modal-close-trigger" aria-label="Close modal">&times;</button>
-      <h3 style="margin-bottom: 1rem;">Partner Service Editor</h3>
+      <h3 class="modal-form-heading">Partner Service Editor</h3>
       <form id="admin-service-form"></form>
     </div>
   </div>

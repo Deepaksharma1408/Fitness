@@ -516,3 +516,122 @@ body.admin-body {
 .auth-footer-link a:hover {
   color: #fff;
 }
+
+/* ==========================================================================
+   UTILITY & COMPONENT CLASSES (Replaces inline styles)
+   ========================================================================== */
+
+#admin-dashboard-wrapper {
+  display: none;
+  width: 100%;
+}
+
+.admin-card-mb {
+  margin-bottom: 1.5rem;
+}
+
+.form-group-mb {
+  margin-bottom: 1.25rem;
+}
+
+.form-group-mb-sm {
+  margin-bottom: 0.5rem;
+}
+
+.auth-protected-badge {
+  color: var(--primary);
+  font-size: 0.775rem;
+  font-weight: 700;
+}
+
+.auth-submit-btn {
+  font-weight: 800;
+}
+
+.auth-default-label {
+  font-weight: 800;
+  color: #fff;
+}
+
+.auth-autofill-btn {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+}
+
+.admin-brand-subtitle {
+  font-size: 0.725rem;
+  color: #9ca3af;
+}
+
+.btn-danger-outline {
+  color: #ef4444 !important;
+  border-color: rgba(239, 68, 68, 0.3) !important;
+}
+
+.btn-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.color-hex-input {
+  font-family: var(--font-mono);
+  width: 140px;
+}
+
+.swatches-flex-row {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.swatch-red { border-left: 5px solid #FF3B30 !important; }
+.swatch-blue { border-left: 5px solid #2563EB !important; }
+.swatch-green { border-left: 5px solid #059669 !important; }
+.swatch-amber { border-left: 5px solid #D97706 !important; }
+.swatch-violet { border-left: 5px solid #7C3AED !important; }
+
+.pane-actions-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.th-comp-feature { width: 25%; }
+.th-comp-typical { width: 35%; }
+.th-comp-hybrid { width: 35%; }
+.th-comp-action { width: 5%; }
+
+.hidden-file-input {
+  display: none;
+}
+
+.backup-json-box {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  height: 400px;
+}
+
+.save-bar-hint {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.save-bar-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.modal-coach-dialog {
+  max-width: 680px;
+}
+
+.modal-service-dialog {
+  max-width: 620px;
+}
+
+.modal-form-heading {
+  margin-bottom: 1rem;
+}
