@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CMS Studio • Dynamic Website Admin</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Base & Theme Styles -->
+  <link rel="stylesheet" href="/src/styles/variables.css" />
+  <link rel="stylesheet" href="/src/styles/base.css" />
+  <link rel="stylesheet" href="/src/styles/components.css" />
+  <link rel="stylesheet" href="/src/styles/admin.css" />
+</head>
+<body class="admin-body">
+
+  <!-- 1. SECURE ADMIN AUTHENTICATION GATE -->
+  <div id="admin-auth-screen" class="admin-auth-screen">
+    <div class="admin-auth-card">
+      <div class="auth-header">
+        <div class="auth-icon-badge">🔐</div>
+        <h1 class="auth-title">CMS Studio Access</h1>
+        <p class="auth-subtitle">Sign in with your administrator email and password to manage <span class="dynamic-brand-name">Apex Fitness</span>.</p>
+      </div>
+
+      <div id="login-error-msg" class="auth-error-box">
+        Invalid credentials. Please try again.
+      </div>
+
+      <form id="admin-login-form">
+        <div class="form-group form-group-mb">
+          <label class="form-label" for="login-email">Admin Email Address</label>
+          <input type="email" id="login-email" class="admin-input" placeholder="admin@apexfitness.com" required autocomplete="email" />
+        </div>
+
+        <div class="form-group form-group-mb-sm">
+          <label class="form-label" for="login-password">Admin Password</label>
+          <div class="auth-input-wrapper">
+            <input type="password" id="login-password" class="admin-input" placeholder="••••••••" required autocomplete="current-password" />
+            <button type="button" id="btn-toggle-pwd" class="auth-toggle-pwd" aria-label="Toggle password visibility">👁️</button>
+          </div>
+        </div>
+
+        <div class="auth-remember-row">
+          <label>
+            <input type="checkbox" id="login-remember" checked />
+            <span>Keep me signed in</span>
+          </label>
+          <span class="auth-protected-badge">Protected Area</span>
+        </div>
+
+        <button type="submit" id="btn-login-submit" class="btn btn-primary btn-full btn-lg auth-submit-btn">
+          Sign In to CMS Studio →
+        </button>
+      </form>
+
+      <div class="auth-demo-badge">
+        <div>
+          <span class="auth-default-label">Default Login:</span><br />
+          <span id="demo-email-hint">admin@apexfitness.com</span> / <span id="demo-pwd-hint">admin123</span>
+        </div>
+        <button type="button" id="btn-autofill-demo" class="btn btn-secondary btn-sm auth-autofill-btn">
+          Quick Fill
+        </button>
+      </div>
+
+      <div class="auth-footer-link">
+        <a href="/" target="_blank">← Return to Main Website</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. AUTHENTICATED DASHBOARD WRAPPER -->
+  <div id="admin-dashboard-wrapper">
+
+    <!-- Admin Header -->
+    <header class="admin-header">
+      <div class="admin-brand">
+        <div class="admin-logo-box">⚙️</div>
+        <div>
+          <div class="admin-brand-title">CMS Studio • <span class="dynamic-brand-name">Apex Fitness</span></div>
+          <div class="admin-brand-subtitle">Dynamic Multi-Tenant Customizer Hub</div>
+        </div>
+      </div>
+
+      <div class="admin-header-actions">
+        <div class="status-badge-live">
+          <span class="status-dot-pulse"></span>
+          <span>Auto-Sync Active</span>
+        </div>
+
+        <button id="btn-reset-defaults" class="btn btn-secondary btn-sm btn-danger-outline" title="Reset to default settings">
+          ↺ Reset Defaults
+        </button>
+
+        <a href="/" target="_blank" class="btn btn-secondary btn-sm btn-with-icon">
+          <span>View Live Site</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+
+        <button class="btn btn-primary btn-sm btn-save-all">
+          <span>Save & Publish 💾</span>
+        </button>
+
+        <button id="btn-admin-logout" class="btn btn-secondary btn-sm btn-danger-outline btn-with-icon" title="Sign out of CMS Studio">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          <span>Log Out</span>
+        </button>
+      </div>
+    </header>
+
+  <!-- Admin Layout -->
+  <div class="admin-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="admin-sidebar">
+      <button class="admin-nav-item active" data-tab="branding">
+        <span class="admin-nav-icon">🎨</span>
+        <span>Branding & Colors</span>
+      </button>
+      <button class="admin-nav-item" data-tab="hero">
+        <span class="admin-nav-icon">🚀</span>
+        <span>Hero Section</span>
+      </button>
+      <button class="admin-nav-item" data-tab="pillars">
+        <span class="admin-nav-icon">🏋️</span>
+        <span>Core Pillars</span>
+      </button>
+      <button class="admin-nav-item" data-tab="comparison">
+        <span class="admin-nav-icon">⚖️</span>
+        <span>Comparison Table</span>
+      </button>
+      <button class="admin-nav-item" data-tab="coaches">
+        <span class="admin-nav-icon">👥</span>
+        <span>Coaches Directory</span>
+      </button>
+      <button class="admin-nav-item" data-tab="services">
+        <span class="admin-nav-icon">🛍️</span>
+        <span>Services & Stores</span>
+      </button>
+      <button class="admin-nav-item" data-tab="pricing">
+        <span class="admin-nav-icon">💳</span>
+        <span>Pricing Plans</span>
+      </button>
+      <button class="admin-nav-item" data-tab="faqs">
+        <span class="admin-nav-icon">❓</span>
+        <span>FAQ Manager</span>
+      </button>
+      <button class="admin-nav-item" data-tab="backup">
+        <span class="admin-nav-icon">💾</span>
+        <span>Backup & Restore</span>
+      </button>
+    </aside>
+
+    <!-- Main Content Tabs -->
+    <main class="admin-main">
+
+      <!-- TAB 1: BRANDING & COLORS -->
+      <section id="tab-branding" class="admin-tab-pane active">
+        <div class="pane-header">
+          <div>
+            <h2>🎨 Branding, Theme & Accent Colors</h2>
+            <p>Customize brand identity, primary accent hue, and typography defaults across the entire site.</p>
+          </div>
+          <button class="btn btn-primary btn-sm btn-save-all">Save Changes</button>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-title">Brand Identity</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Brand Name</label>
+              <input type="text" id="brand-input-name" class="admin-input" placeholder="e.g. Apex Fitness, Titan Fit" />
+              <span class="form-hint">Updates header logo, footer trademarks, hero copy, and browser title dynamically.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Logo Icon Letter</label>
+              <input type="text" id="brand-input-letter" class="admin-input" maxlength="2" placeholder="e.g. T, A, S" />
+              <span class="form-hint">Displayed inside header and footer logo icon boxes.</span>
+            </div>
+            <div class="form-group form-grid-full">
+              <label class="form-label">Tagline Slogan</label>
+              <input type="text" id="brand-input-tagline" class="admin-input" placeholder="e.g. Online fitness coaching with real coaches" />
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-title">Primary Brand Accent Color</div>
+          <p class="admin-card-desc">Choose a custom hex code or click any curated athletic preset below. All buttons, borders, badges, and active indicators adapt automatically with clean, solid tones.</p>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Custom Color Picker</label>
+              <div class="color-picker-row">
+                <input type="color" id="brand-color-picker" class="color-input-native" value="#FF3B30" />
+                <input type="text" id="brand-color-hex" class="admin-input color-hex-input" value="#FF3B30" />
+                <span class="form-hint">Click box or type Hex</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Curated Athletic Presets</label>
+              <div class="swatches-flex-row">
+                <button type="button" id="swatch-red" class="swatch-preset-btn swatch-red btn btn-secondary btn-sm" data-hex="#FF3B30" data-hue="5">
+                  Crimson Red (#FF3B30)
+                </button>
+                <button type="button" id="swatch-blue" class="swatch-preset-btn swatch-blue btn btn-secondary btn-sm" data-hex="#2563EB" data-hue="221">
+                  Royal Blue (#2563EB)
+                </button>
+                <button type="button" id="swatch-green" class="swatch-preset-btn swatch-green btn btn-secondary btn-sm" data-hex="#059669" data-hue="160">
+                  Forest Green (#059669)
+                </button>
+                <button type="button" id="swatch-amber" class="swatch-preset-btn swatch-amber btn btn-secondary btn-sm" data-hex="#D97706" data-hue="37">
+                  Warm Amber (#D97706)
+                </button>
+                <button type="button" id="swatch-violet" class="swatch-preset-btn swatch-violet btn btn-secondary btn-sm" data-hex="#7C3AED" data-hue="262">
+                  Deep Violet (#7C3AED)
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-title">Default Theme & Copyright</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Default Theme</label>
+              <select id="brand-default-theme" class="admin-select">
+                <option value="dark">Dark Mode (Recommended)</option>
+                <option value="light">Light Mode</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Footer Copyright Statement</label>
+              <input type="text" id="brand-copyright" class="admin-input" />
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-title">🔐 CMS Security & Login Credentials</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Admin Login Email</label>
+              <input type="email" id="admin-auth-email" class="admin-input" placeholder="admin@apexfitness.com" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Admin Login Password</label>
+              <input type="password" id="admin-auth-password" class="admin-input" placeholder="••••••••" />
+              <span class="form-hint">Credentials required to sign in to this CMS dashboard.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: HERO SECTION -->
+      <section id="tab-hero" class="admin-tab-pane">
+        <div class="pane-header">
+          <div>
+            <h2>🚀 Hero Section Customizer</h2>
+            <p>Fine-tune above-the-fold punchlines, call-to-action buttons, and trust badges.</p>
+          </div>
+          <button class="btn btn-primary btn-sm btn-save-all">Save Changes</button>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-title">Hero Headlines & Copy</div>
+          <div class="form-grid">
+            <div class="form-group form-grid-full">
+              <label class="form-label">Top Pill Badge Text</label>
+              <input type="text" id="hero-input-pill" class="admin-input" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Headline Line 1</label>
+              <input type="text" id="hero-input-line1" class="admin-input" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Headline Line 2 (Glowing Gradient)</label>
+              <input type="text" id="hero-input-line2" class="admin-input" />
+            </div>
+            <div class="form-group form-grid-full">
+              <label class="form-label">Headline Line 3</label>
+              <input type="text" id="hero-input-line3" class="admin-input" />
+            </div>
+            <div class="form-group form-grid-full">
+              <label class="form-label">Hero Body Paragraph</label>
+              <textarea id="hero-input-desc" class="admin-textarea" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Primary CTA Button Label</label>
+              <input type="text" id="hero-input-cta-primary" class="admin-input" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Secondary CTA Button Label</label>
+              <input type="text" id="hero-input-cta-secondary" class="admin-input" />
+            </div>
+            <div class="form-group form-grid-full">
+              <label class="form-label">Proof Bar Bullet Points (One per line)</label>
+              <textarea id="hero-input-proof" class="admin-textarea" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-title">Final High-Impact CTA Box (Bottom of Page)</div>
+          <div class="form-grid">
+            <div class="form-group form-grid-full">
+              <label class="form-label">CTA Box Main Heading</label>
+              <input type="text" id="final-cta-input-heading" class="admin-input" placeholder="e.g. Ready to build your ultimate physique?" />
+            </div>
+            <div class="form-group form-grid-full">
+              <label class="form-label">CTA Subheading / Description</label>
+              <textarea id="final-cta-input-subheading" class="admin-textarea" rows="2" placeholder="e.g. Take our 60-second assessment, get paired with your coach..."></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Primary Button Text</label>
+              <input type="text" id="final-cta-input-btn" class="admin-input" placeholder="e.g. Start 60s Coach Assessment →" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: CORE PILLARS -->
+      <section id="tab-pillars" class="admin-tab-pane">
+        <div class="pane-header">
+          <div>
+            <h2>🏋️ Core Pillars ("Why Us" Cards)</h2>
+            <p>Customize the 3 foundational pillars of your coaching methodology.</p>
+          </div>
+          <button class="btn btn-primary btn-sm btn-save-all">Save Changes</button>
+        </div>
+
+        <div class="admin-card admin-card-mb">
+          <div class="admin-card-title">Pillars Section Header</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Pill Tag</label>
+              <input type="text" id="pillars-input-pill" class="admin-input" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Section Title</label>
+              <input type="text" id="pillars-input-title" class="admin-input" />
+            </div>
+            <div class="form-group form-grid-full">
+              <label class="form-label">Section Subheading</label>
+              <textarea id="pillars-input-desc" class="admin-textarea" rows="2"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div id="pillars-editor-container">
+          <!-- Populated by admin.js -->
+        </div>
+      </section>
+
+      <!-- TAB 4: COMPARISON MATRIX -->
+      <section id="tab-comparison" class="admin-tab-pane">
+        <div class="pane-header">
+          <div>
+            <h2>⚖️ Comparison Matrix Manager</h2>
+            <p>Edit side-by-side differentiators between typical generic fitness apps and your Hybrid Edge.</p>
+          </div>
+          <div class="pane-actions-row">
+            <button id="btn-add-comp-row" class="btn btn-secondary btn-sm">+ Add Comparison Row</button>
+            <button class="btn btn-primary btn-sm btn-save-all">Save Changes</button>
+          </div>
+        </div>
+
+        <div class="admin-card admin-card-mb">
+          <div class="admin-card-title">Comparison Section Header</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Section Title</label>
+              <input type="text" id="comp-input-title" class="admin-input" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Section Description</label>
+              <input type="text" id="comp-input-desc" class="admin-input" />
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th class="th-comp-feature">Capability / Feature</th>
+                <th class="th-comp-typical">Typical Apps ❌</th>
+                <th class="th-comp-hybrid">Hybrid Edge ⚡</th>
+                <th class="th-comp-action">Action</th>
+              </tr>
+            </thead>
+            <tbody id="comparison-table-body">
+              <!-- Populated by admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TAB 5: COACHES DIRECTORY -->
+      <section id="tab-coaches" class="admin-tab-pane">
+        <div class="pane-header">
+          <div>
+            <h2>👥 Certified Coaches Directory (CRUD)</h2>
+            <p>Add new personal trainers, modify bios, rates, review scores, and photography.</p>
+          </div>
+          <div class="pane-actions-row">
+            <button id="btn-add-coach" class="btn btn-secondary btn-sm">+ Add New Coach</button>
+            <button class="btn btn-primary btn-sm btn-save-all">Save Changes</button>
+          </div>
+        </div>
+
+        <div class="admin-card admin-card-mb">
+          <div class="admin-card-title">Coaches Section Header</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Section Title</label>
+              <input type="text" id="coaches-input-title" class="admin-input" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Section Description</label>
+              <input type="text" id="coaches-input-desc" class="admin-input" />
+            </div>
+          </div>
+        </div>
+
+        <div id="admin-coaches-list">
+          <!-- Populated by admin.js -->
+        </div>
+      </section>
+
+      <!-- TAB 6: SERVICES & STORES -->
+      <section id="tab-services" class="admin-tab-pane">
+        <div class="pane-header">
+          <div>
+            <h2>🛍️ Services & Partner Stores (CRUD)</h2>
+            <p>Manage ecosystem vendors: Meal prep companies, physical therapy clinics, and supplements.</p>
+          </div>
+          <div class="pane-actions-row">
+            <button id="btn-add-service" class="btn btn-secondary btn-sm">+ Add Partner Store</button>
+            <button class="btn btn-primary btn-sm btn-save-all">Save Changes</button>
+          </div>
+        </div>
+
+        <div class="admin-card admin-card-mb">
+          <div class="admin-card-title">Services Section Header</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Section Title</label>
+              <input type="text" id="services-input-title" class="admin-input" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Section Description</label>
+              <input type="text" id="services-input-desc" class="admin-input" />
+            </div>
+          </div>
+        </div>
+
+        <div id="admin-services-list">
+          <!-- Populated by admin.js -->
+        </div>
+      </section>
+
+      <!-- TAB 7: PRICING PLANS -->
+      <section id="tab-pricing" class="admin-tab-pane">
+        <div class="pane-header">
+          <div>
+            <h2>💳 Membership Plans & Pricing</h2>
+            <p>Configure subscription tiers, discount formulas for quarterly/annual, and feature checkmarks.</p>
+          </div>
+          <button class="btn btn-primary btn-sm btn-save-all">Save Changes</button>
+        </div>
+
+        <div class="admin-card admin-card-mb">
+          <div class="admin-card-title">Pricing & B2B Platform Headers</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Pricing Section Title</label>
+              <input type="text" id="pricing-input-title" class="admin-input" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Pricing Section Description</label>
+              <input type="text" id="pricing-input-desc" class="admin-input" />
+            </div>
+            <div class="form-group form-grid-full">
+              <label class="form-label">B2B Coach Platform Heading</label>
+              <input type="text" id="b2b-input-heading" class="admin-input" />
+            </div>
+            <div class="form-group form-grid-full">
+              <label class="form-label">B2B Coach Platform Subheading</label>
+              <textarea id="b2b-input-subheading" class="admin-textarea" rows="2"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div id="admin-pricing-list">
+          <!-- Populated by admin.js -->
+        </div>
+      </section>
+
+      <!-- TAB 8: FAQS MANAGER -->
+      <section id="tab-faqs" class="admin-tab-pane">
+        <div class="pane-header">
+          <div>
+            <h2>❓ FAQ Manager (CRUD)</h2>
+            <p>Update answers to client objections, billing inquiries, and onboarding procedures.</p>
+          </div>
+          <div class="pane-actions-row">
+            <button id="btn-add-faq" class="btn btn-secondary btn-sm">+ Add FAQ Item</button>
+            <button class="btn btn-primary btn-sm btn-save-all">Save Changes</button>
+          </div>
+        </div>
+
+        <div class="admin-card admin-card-mb">
+          <div class="admin-card-title">FAQ Section Header</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">FAQ Section Title</label>
+              <input type="text" id="faqs-input-title" class="admin-input" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">FAQ Section Description</label>
+              <input type="text" id="faqs-input-desc" class="admin-input" />
+            </div>
+          </div>
+        </div>
+
+        <div id="admin-faqs-list">
+          <!-- Populated by admin.js -->
+        </div>
+      </section>
+
+      <!-- TAB 9: BACKUP & RESTORE -->
+      <section id="tab-backup" class="admin-tab-pane">
+        <div class="pane-header">
+          <div>
+            <h2>💾 Backup, Export & JSON Sync</h2>
+            <p>Export full site configuration as JSON to duplicate setups or transfer across clients.</p>
+          </div>
+          <div class="pane-actions-row">
+            <button id="btn-export-json" class="btn btn-secondary btn-sm">Export JSON 📥</button>
+            <button id="btn-import-json" class="btn btn-secondary btn-sm">Import JSON 📤</button>
+            <input type="file" id="import-file-input" accept=".json" class="hidden-file-input" />
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-title">Raw JSON Configuration</div>
+          <textarea id="backup-json-textarea" class="admin-textarea backup-json-box" readonly></textarea>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Sticky Save Floating Bar -->
+  <aside class="admin-save-bar">
+    <div class="save-bar-hint">
+      ⚡ Unsaved drafts sync in real-time
+    </div>
+    <div class="save-bar-actions">
+      <a href="/" target="_blank" class="btn btn-secondary btn-sm">Preview Live Site ↗</a>
+      <button class="btn btn-primary btn-sm btn-save-all">Save & Publish 💾</button>
+    </div>
+  </aside>
+  </div> <!-- End #admin-dashboard-wrapper -->
+
+  <!-- Coach Edit/Add Modal -->
+  <div class="modal-overlay" id="admin-coach-modal">
+    <div class="modal-dialog modal-coach-dialog">
+      <button class="modal-close modal-close-trigger" aria-label="Close modal">&times;</button>
+      <h3 class="modal-form-heading">Coach Profile Editor</h3>
+      <form id="admin-coach-form"></form>
+    </div>
+  </div>
+
+  <!-- Service Edit/Add Modal -->
+  <div class="modal-overlay" id="admin-service-modal">
+    <div class="modal-dialog modal-service-dialog">
+      <button class="modal-close modal-close-trigger" aria-label="Close modal">&times;</button>
+      <h3 class="modal-form-heading">Partner Service Editor</h3>
+      <form id="admin-service-form"></form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Script Initialization -->
+  <script type="module">
+    import { initAdminDashboard } from '/src/scripts/admin.js';
+    document.addEventListener("DOMContentLoaded", () => {
+      initAdminDashboard();
+    });
+  </script>
+</body>
+</html>
