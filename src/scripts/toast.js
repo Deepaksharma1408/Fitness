@@ -4,7 +4,7 @@
 
 export function showToast(title, description, type = "info") {
   // Only permit toasts within the admin control panel; suppress all popups on the website
-  const isAdmin = typeof window !== "undefined" && window.location.pathname.includes("admin.html");
+  const isAdmin = typeof window !== "undefined" && window.location.pathname.includes("admin");
   if (!isAdmin) {
     return;
   }
