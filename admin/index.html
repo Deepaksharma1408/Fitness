@@ -23,7 +23,7 @@
     <div class="admin-auth-card">
       <div class="auth-header">
         <div class="auth-icon-badge">🔐</div>
-        <h1 class="auth-title">CMS Studio Access</h1>
+        <h1 class="auth-title">Admin Access</h1>
         <p class="auth-subtitle">Sign in with your administrator email and password to manage <span class="dynamic-brand-name">Apex Fitness</span>.</p>
       </div>
 
@@ -195,10 +195,10 @@
           
           <div class="form-grid">
             <div class="form-group">
-              <label class="form-label">Custom Color Picker</label>
+              <label for="brand-color-picker" class="form-label">Custom Color Picker</label>
               <div class="color-picker-row">
-                <input type="color" id="brand-color-picker" class="color-input-native" value="#FF3B30" />
-                <input type="text" id="brand-color-hex" class="admin-input color-hex-input" value="#FF3B30" />
+                <input type="color" id="brand-color-picker" class="color-input-native" value="#FF3B30" title="Custom Brand Color Picker" aria-label="Custom Brand Color Picker" />
+                <input type="text" id="brand-color-hex" class="admin-input color-hex-input" value="#FF3B30" placeholder="#FF3B30" title="Brand Color Hex Code" aria-label="Brand Color Hex Code" />
                 <span class="form-hint">Click box or type Hex</span>
               </div>
             </div>
@@ -230,15 +230,15 @@
           <div class="admin-card-title">Default Theme & Copyright</div>
           <div class="form-grid">
             <div class="form-group">
-              <label class="form-label">Default Theme</label>
-              <select id="brand-default-theme" class="admin-select">
+              <label for="brand-default-theme" class="form-label">Default Theme</label>
+              <select id="brand-default-theme" class="admin-select" title="Default Theme" aria-label="Default Theme">
                 <option value="dark">Dark Mode (Recommended)</option>
                 <option value="light">Light Mode</option>
               </select>
             </div>
             <div class="form-group">
-              <label class="form-label">Footer Copyright Statement</label>
-              <input type="text" id="brand-copyright" class="admin-input" />
+              <label for="brand-copyright" class="form-label">Footer Copyright Statement</label>
+              <input type="text" id="brand-copyright" class="admin-input" placeholder="© 2026 Apex Fitness Technologies Inc. All rights reserved." title="Footer Copyright Statement" />
             </div>
           </div>
         </div>
@@ -273,36 +273,36 @@
           <div class="admin-card-title">Hero Headlines & Copy</div>
           <div class="form-grid">
             <div class="form-group form-grid-full">
-              <label class="form-label">Top Pill Badge Text</label>
-              <input type="text" id="hero-input-pill" class="admin-input" />
+              <label for="hero-input-pill" class="form-label">Top Pill Badge Text</label>
+              <input type="text" id="hero-input-pill" class="admin-input" placeholder="e.g. HYBRID ATHLETIC COACHING" title="Top Pill Badge Text" />
             </div>
             <div class="form-group">
-              <label class="form-label">Headline Line 1</label>
-              <input type="text" id="hero-input-line1" class="admin-input" />
+              <label for="hero-input-line1" class="form-label">Headline Line 1</label>
+              <input type="text" id="hero-input-line1" class="admin-input" placeholder="e.g. Real coaches." title="Headline Line 1" />
             </div>
             <div class="form-group">
-              <label class="form-label">Headline Line 2 (Glowing Gradient)</label>
-              <input type="text" id="hero-input-line2" class="admin-input" />
+              <label for="hero-input-line2" class="form-label">Headline Line 2 (Glowing Gradient)</label>
+              <input type="text" id="hero-input-line2" class="admin-input" placeholder="e.g. Clear plans." title="Headline Line 2" />
             </div>
             <div class="form-group form-grid-full">
-              <label class="form-label">Headline Line 3</label>
-              <input type="text" id="hero-input-line3" class="admin-input" />
+              <label for="hero-input-line3" class="form-label">Headline Line 3</label>
+              <input type="text" id="hero-input-line3" class="admin-input" placeholder="e.g. Honest progress." title="Headline Line 3" />
             </div>
             <div class="form-group form-grid-full">
-              <label class="form-label">Hero Body Paragraph</label>
-              <textarea id="hero-input-desc" class="admin-textarea" rows="3"></textarea>
+              <label for="hero-input-desc" class="form-label">Hero Body Paragraph</label>
+              <textarea id="hero-input-desc" class="admin-textarea" rows="3" placeholder="Enter hero description..." title="Hero Body Paragraph"></textarea>
             </div>
             <div class="form-group">
-              <label class="form-label">Primary CTA Button Label</label>
-              <input type="text" id="hero-input-cta-primary" class="admin-input" />
+              <label for="hero-input-cta-primary" class="form-label">Primary CTA Button Label</label>
+              <input type="text" id="hero-input-cta-primary" class="admin-input" placeholder="e.g. Match Me With a Coach →" title="Primary CTA Button Label" />
             </div>
             <div class="form-group">
-              <label class="form-label">Secondary CTA Button Label</label>
-              <input type="text" id="hero-input-cta-secondary" class="admin-input" />
+              <label for="hero-input-cta-secondary" class="form-label">Secondary CTA Button Label</label>
+              <input type="text" id="hero-input-cta-secondary" class="admin-input" placeholder="e.g. Coach Portal ↗" title="Secondary CTA Button Label" />
             </div>
             <div class="form-group form-grid-full">
-              <label class="form-label">Proof Bar Bullet Points (One per line)</label>
-              <textarea id="hero-input-proof" class="admin-textarea" rows="3"></textarea>
+              <label for="hero-input-proof" class="form-label">Proof Bar Bullet Points (One per line)</label>
+              <textarea id="hero-input-proof" class="admin-textarea" rows="3" placeholder="e.g. 5,000+ Active Athletes" title="Proof Bar Bullet Points"></textarea>
             </div>
           </div>
         </div>
@@ -340,16 +340,16 @@
           <div class="admin-card-title">Pillars Section Header</div>
           <div class="form-grid">
             <div class="form-group">
-              <label class="form-label">Pill Tag</label>
-              <input type="text" id="pillars-input-pill" class="admin-input" />
+              <label for="pillars-input-pill" class="form-label">Pill Tag</label>
+              <input type="text" id="pillars-input-pill" class="admin-input" placeholder="e.g. WHY APEX FITNESS?" title="Pill Tag" />
             </div>
             <div class="form-group">
-              <label class="form-label">Section Title</label>
-              <input type="text" id="pillars-input-title" class="admin-input" />
+              <label for="pillars-input-title" class="form-label">Section Title</label>
+              <input type="text" id="pillars-input-title" class="admin-input" placeholder="e.g. Coaching, plans and tracking in one app" title="Section Title" />
             </div>
             <div class="form-group form-grid-full">
-              <label class="form-label">Section Subheading</label>
-              <textarea id="pillars-input-desc" class="admin-textarea" rows="2"></textarea>
+              <label for="pillars-input-desc" class="form-label">Section Subheading</label>
+              <textarea id="pillars-input-desc" class="admin-textarea" rows="2" placeholder="Enter pillars section description..." title="Section Subheading"></textarea>
             </div>
           </div>
         </div>
@@ -376,12 +376,12 @@
           <div class="admin-card-title">Comparison Section Header</div>
           <div class="form-grid">
             <div class="form-group">
-              <label class="form-label">Section Title</label>
-              <input type="text" id="comp-input-title" class="admin-input" />
+              <label for="comp-input-title" class="form-label">Section Title</label>
+              <input type="text" id="comp-input-title" class="admin-input" placeholder="e.g. Typical fitness apps vs. The Hybrid Edge" title="Section Title" />
             </div>
             <div class="form-group">
-              <label class="form-label">Section Description</label>
-              <input type="text" id="comp-input-desc" class="admin-input" />
+              <label for="comp-input-desc" class="form-label">Section Description</label>
+              <input type="text" id="comp-input-desc" class="admin-input" placeholder="Enter comparison description..." title="Section Description" />
             </div>
           </div>
         </div>
@@ -420,12 +420,12 @@
           <div class="admin-card-title">Coaches Section Header</div>
           <div class="form-grid">
             <div class="form-group">
-              <label class="form-label">Section Title</label>
-              <input type="text" id="coaches-input-title" class="admin-input" />
+              <label for="coaches-input-title" class="form-label">Section Title</label>
+              <input type="text" id="coaches-input-title" class="admin-input" placeholder="e.g. Train with certified world-class coaches" title="Section Title" />
             </div>
             <div class="form-group">
-              <label class="form-label">Section Description</label>
-              <input type="text" id="coaches-input-desc" class="admin-input" />
+              <label for="coaches-input-desc" class="form-label">Section Description</label>
+              <input type="text" id="coaches-input-desc" class="admin-input" placeholder="Enter coaches section description..." title="Section Description" />
             </div>
           </div>
         </div>
@@ -452,12 +452,12 @@
           <div class="admin-card-title">Services Section Header</div>
           <div class="form-grid">
             <div class="form-group">
-              <label class="form-label">Section Title</label>
-              <input type="text" id="services-input-title" class="admin-input" />
+              <label for="services-input-title" class="form-label">Section Title</label>
+              <input type="text" id="services-input-title" class="admin-input" placeholder="e.g. Services & Partner Stores" title="Section Title" />
             </div>
             <div class="form-group">
-              <label class="form-label">Section Description</label>
-              <input type="text" id="services-input-desc" class="admin-input" />
+              <label for="services-input-desc" class="form-label">Section Description</label>
+              <input type="text" id="services-input-desc" class="admin-input" placeholder="Enter services section description..." title="Section Description" />
             </div>
           </div>
         </div>
@@ -481,20 +481,20 @@
           <div class="admin-card-title">Pricing & B2B Platform Headers</div>
           <div class="form-grid">
             <div class="form-group">
-              <label class="form-label">Pricing Section Title</label>
-              <input type="text" id="pricing-input-title" class="admin-input" />
+              <label for="pricing-input-title" class="form-label">Pricing Section Title</label>
+              <input type="text" id="pricing-input-title" class="admin-input" placeholder="e.g. Invest in your highest potential" title="Pricing Section Title" />
             </div>
             <div class="form-group">
-              <label class="form-label">Pricing Section Description</label>
-              <input type="text" id="pricing-input-desc" class="admin-input" />
+              <label for="pricing-input-desc" class="form-label">Pricing Section Description</label>
+              <input type="text" id="pricing-input-desc" class="admin-input" placeholder="Enter pricing section description..." title="Pricing Section Description" />
             </div>
             <div class="form-group form-grid-full">
-              <label class="form-label">B2B Coach Platform Heading</label>
-              <input type="text" id="b2b-input-heading" class="admin-input" />
+              <label for="b2b-input-heading" class="form-label">B2B Coach Platform Heading</label>
+              <input type="text" id="b2b-input-heading" class="admin-input" placeholder="e.g. Run your coaching business from one unified place." title="B2B Coach Platform Heading" />
             </div>
             <div class="form-group form-grid-full">
-              <label class="form-label">B2B Coach Platform Subheading</label>
-              <textarea id="b2b-input-subheading" class="admin-textarea" rows="2"></textarea>
+              <label for="b2b-input-subheading" class="form-label">B2B Coach Platform Subheading</label>
+              <textarea id="b2b-input-subheading" class="admin-textarea" rows="2" placeholder="Enter B2B coach platform description..." title="B2B Coach Platform Subheading"></textarea>
             </div>
           </div>
         </div>
@@ -521,12 +521,12 @@
           <div class="admin-card-title">FAQ Section Header</div>
           <div class="form-grid">
             <div class="form-group">
-              <label class="form-label">FAQ Section Title</label>
-              <input type="text" id="faqs-input-title" class="admin-input" />
+              <label for="faqs-input-title" class="form-label">FAQ Section Title</label>
+              <input type="text" id="faqs-input-title" class="admin-input" placeholder="e.g. Frequently Asked Questions" title="FAQ Section Title" />
             </div>
             <div class="form-group">
-              <label class="form-label">FAQ Section Description</label>
-              <input type="text" id="faqs-input-desc" class="admin-input" />
+              <label for="faqs-input-desc" class="form-label">FAQ Section Description</label>
+              <input type="text" id="faqs-input-desc" class="admin-input" placeholder="Enter FAQ section description..." title="FAQ Section Description" />
             </div>
           </div>
         </div>
@@ -546,13 +546,13 @@
           <div class="pane-actions-row">
             <button id="btn-export-json" class="btn btn-secondary btn-sm">Export JSON 📥</button>
             <button id="btn-import-json" class="btn btn-secondary btn-sm">Import JSON 📤</button>
-            <input type="file" id="import-file-input" accept=".json" class="hidden-file-input" />
+            <input type="file" id="import-file-input" accept=".json" class="hidden-file-input" title="Import JSON configuration file" aria-label="Import JSON configuration file" />
           </div>
         </div>
 
         <div class="admin-card">
           <div class="admin-card-title">Raw JSON Configuration</div>
-          <textarea id="backup-json-textarea" class="admin-textarea backup-json-box" readonly></textarea>
+          <textarea id="backup-json-textarea" class="admin-textarea backup-json-box" readonly placeholder="Raw JSON backup configuration will appear here..." title="Raw JSON Configuration" aria-label="Raw JSON Configuration"></textarea>
         </div>
       </section>
 
